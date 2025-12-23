@@ -188,3 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+// HERO IMAGE SLIDESHOW
+const heroSlides = document.querySelectorAll(".hero-slide");
+let heroIndex = 0;
+
+setInterval(() => {
+  heroSlides[heroIndex].classList.remove("active");
+  heroIndex = (heroIndex + 1) % heroSlides.length;
+  heroSlides[heroIndex].classList.add("active");
+}, 4000); // 4 seconds
