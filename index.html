@@ -203,7 +203,8 @@
   <section id="gallery" class="reveal">
   <h2>Gallery</h2>
 
-  <div class="gallery-grid" id="galleryGrid">
+  <div class="gallery-grid mobile-slider" id="galleryGrid">
+
     
     <img src="https://igjtvefiqhxqaqwoacxm.supabase.co/storage/v1/object/public/bibah/IMG-20251218-WA0004.jpg">
     <img src="https://igjtvefiqhxqaqwoacxm.supabase.co/storage/v1/object/public/bibah/IMG-20251218-WA0012.jpg">
@@ -381,6 +382,32 @@
   >
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
   </a>
+<script>
+const slider = document.querySelector(".mobile-slider");
+
+if (slider && window.innerWidth <= 768) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("touchstart", e => {
+    isDown = true;
+    startX = e.touches[0].pageX;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener("touchmove", e => {
+    if (!isDown) return;
+    const x = e.touches[0].pageX;
+    const walk = (startX - x);
+    slider.scrollLeft = scrollLeft + walk;
+  });
+
+  slider.addEventListener("touchend", () => {
+    isDown = false;
+  });
+}
+</script>
 
   <script src="script.js"></script>
 </body>

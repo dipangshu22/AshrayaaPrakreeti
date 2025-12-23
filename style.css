@@ -860,3 +860,27 @@ HERO IMAGE CAROUSEL
 .hero-carousel img.active {
   opacity: 1;
 }
+/* ================= MOBILE GALLERY SLIDER ================= */
+@media (max-width: 768px) {
+  .mobile-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-slider img {
+    flex: 0 0 85%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    scroll-snap-align: center;
+  }
+
+  /* hide scrollbar */
+  .mobile-slider::-webkit-scrollbar {
+    display: none;
+  }
+}
