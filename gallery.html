@@ -129,7 +129,7 @@ document.querySelectorAll(".slideshow").forEach(slideshow => {
     slides[i].classList.add("active");
   };
 
-  // Button navigation
+  
   slideshow.querySelector(".next").onclick = () => {
     index = (index + 1) % slides.length;
     showSlide(index);
@@ -140,9 +140,7 @@ document.querySelectorAll(".slideshow").forEach(slideshow => {
     showSlide(index);
   };
 
-  // ===============================
-  // MOBILE SWIPE SUPPORT
-  // ===============================
+  
   let startX = 0;
   let endX = 0;
 
@@ -157,12 +155,12 @@ document.querySelectorAll(".slideshow").forEach(slideshow => {
   slideshow.addEventListener("touchend", () => {
     const diff = startX - endX;
 
-    if (Math.abs(diff) > 50) { // swipe threshold
+    if (Math.abs(diff) > 50) { 
       if (diff > 0) {
-        // swipe left → next
+       
         index = (index + 1) % slides.length;
       } else {
-        // swipe right → prev
+        
         index = (index - 1 + slides.length) % slides.length;
       }
       showSlide(index);
