@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR (reuse same navbar if you want) -->
+ 
   <header class="navbar">
     <div class="logo flower-logo">
       <span class="logo-text">Ashrayaa Prakreeti</span>
@@ -21,7 +21,7 @@
     </nav>
   </header>
 
-  <!-- GALLERY HERO -->
+  
   <section class="gallery-hero">
     <h1>Our Gallery</h1>
     <p>Moments captured at Ashrayaa Prakreeti</p>
@@ -30,7 +30,7 @@
   
   <section id="gallery" class="gallery-sections">
 
-  <!-- MARRIAGE HALL -->
+  
   <div class="gallery-section">
     <h2>Marriage Hall</h2>
     <div class="slideshow" data-gallery="marriage">
@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <!-- CONFERENCE -->
+ 
   <div class="gallery-section">
     <h2>Conference Hall</h2>
     <div class="slideshow" data-gallery="conference">
@@ -68,7 +68,7 @@
     </div>
   </div>
 
-  <!-- OPEN SPACE -->
+ 
   <div class="gallery-section">
     <h2>Open Space</h2>
     <div class="slideshow">
@@ -87,7 +87,7 @@
     </div>
   </div>
 
-  <!-- HOMESTAY -->
+  
   <div class="gallery-section">
     <h2>Homestay</h2>
     <div class="slideshow">
@@ -99,7 +99,7 @@
     </div>
   </div>
 
-  <!-- PARKING -->
+  
   <div class="gallery-section">
     <h2>Parking Area</h2>
     <div class="slideshow">
@@ -113,35 +113,64 @@
 </section>
 
 
-  <!-- FOOTER -->
+  
   <footer class="site-footer">
     <div class="footer-bottom">
       © 2025 Ashrayaa Prakreeti • All Rights Reserved
     </div>
   </footer>
   <script>
-  document.querySelectorAll(".slideshow").forEach(slideshow => {
-    const slides = slideshow.querySelectorAll(".slide");
-    let index = 0;
+document.querySelectorAll(".slideshow").forEach(slideshow => {
+  const slides = slideshow.querySelectorAll(".slide");
+  let index = 0;
 
-    const showSlide = i => {
-      slides.forEach(s => s.classList.remove("active"));
-      slides[i].classList.add("active");
-    };
+  const showSlide = i => {
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
+  };
 
-    slideshow.querySelector(".next").onclick = () => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    };
+  // Button navigation
+  slideshow.querySelector(".next").onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  };
 
-    slideshow.querySelector(".prev").onclick = () => {
-      index = (index - 1 + slides.length) % slides.length;
-      showSlide(index);
-    };
+  slideshow.querySelector(".prev").onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  };
 
-    
+  // ===============================
+  // MOBILE SWIPE SUPPORT
+  // ===============================
+  let startX = 0;
+  let endX = 0;
+
+  slideshow.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
   });
+
+  slideshow.addEventListener("touchmove", e => {
+    endX = e.touches[0].clientX;
+  });
+
+  slideshow.addEventListener("touchend", () => {
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) { // swipe threshold
+      if (diff > 0) {
+        // swipe left → next
+        index = (index + 1) % slides.length;
+      } else {
+        // swipe right → prev
+        index = (index - 1 + slides.length) % slides.length;
+      }
+      showSlide(index);
+    }
+  });
+});
 </script>
+
 
 
 </body>

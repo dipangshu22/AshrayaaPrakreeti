@@ -1,4 +1,4 @@
-/* ================= SPLASH + PETALS ================= */
+
 window.addEventListener("load", () => {
   // Splash
   const splash = document.getElementById("splash");
@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
     }, 400);
   }
 
-  // Falling petals (once)
+  
   for (let i = 0; i < 18; i++) {
     const petal = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     petal.setAttribute("viewBox", "0 0 24 24");
@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
   }
 });
 
-/* ================= SCROLL REVEAL ================= */
+
 const reveals = document.querySelectorAll(".reveal");
 window.addEventListener("scroll", () => {
   reveals.forEach(section => {
@@ -42,7 +42,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-/* ================= HERO MULTI-VIDEO ================= */
+
 const videos = [
   "https://igjtvefiqhxqaqwoacxm.supabase.co/storage/v1/object/public/bibah/WhatsApp%20Video%202025-12-20%20at%2011.52.03%20AM.mp4",
   "https://igjtvefiqhxqaqwoacxm.supabase.co/storage/v1/object/public/bibah/hall.mp4",
@@ -58,7 +58,7 @@ if (heroVideo) {
   heroVideo.playsInline = true;
 
   heroVideo.play().catch(() => {
-    // autoplay fallback for mobile
+    
     heroVideo.addEventListener("canplay", () => heroVideo.play(), { once: true });
   });
 
@@ -69,7 +69,7 @@ if (heroVideo) {
   });
 }
 
-/* ================= LOGO LETTER ANIMATION ================= */
+
 const logoText = document.getElementById("logoText");
 
 if (logoText) {
@@ -84,8 +84,7 @@ if (logoText) {
   });
 }
 
-/* ================= OPTIONAL MOBILE MENU (SAFE) ================= */
-// This WILL NOT break if hamburger/menu do not exist
+
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -100,7 +99,7 @@ if (hamburger && mobileMenu) {
     }
   });
 }
-// ================= GALLERY VIEW MORE (SAFE) =================
+
 const viewMoreBtn = document.getElementById("viewMoreBtn");
 const moreImages = document.querySelectorAll(".more-img");
 
@@ -119,7 +118,7 @@ if (viewMoreBtn && moreImages.length > 0) {
 }
 
 
-// ================= ABOUT LANGUAGE TOGGLE (FIXED) =================
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("toggleLang");
   const aboutEn = document.getElementById("about-en");
@@ -143,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ================= BOOKING FORM =================
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("bookingForm");
 
@@ -162,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // WhatsApp message
+    
     const whatsappText =
       `Hello, I would like to book Ashrayaa Prakreeti.%0A%0A` +
       `Name: ${name}%0A` +
@@ -170,25 +169,24 @@ document.addEventListener("DOMContentLoaded", () => {
       `Event Date: ${date}%0A` +
       `Message: ${message || "N/A"}`;
 
-    // WhatsApp number
     const whatsappNumber = "919435525413";
 
-    // Open WhatsApp
+    
     window.open(
       `https://wa.me/${whatsappNumber}?text=${whatsappText}`,
       "_blank"
     );
 
-    // Optional: open email client
+    
     window.location.href =
       `mailto:anupamdutta2008@gmail.com?subject=Venue Booking Inquiry&body=` +
       `Name: ${name}%0AEmail: ${email}%0ADate: ${date}%0AMessage: ${message}`;
 
-    // Reset form
+ 
     form.reset();
   });
 });
-// HERO IMAGE SLIDESHOW
+
 const heroSlides = document.querySelectorAll(".hero-slide");
 let heroIndex = 0;
 

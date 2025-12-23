@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= SPLASH SCREEN ================= */
+
 #splash {
   position: fixed;
   inset: 0;
@@ -36,7 +36,7 @@ body {
   pointer-events: none;
 }
 
-/* ================= NAVBAR ================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -67,7 +67,7 @@ body {
   border-radius: 20px;
 }
 
-/* ================= SPLIT HERO ================= */
+
 .split-hero {
   display: flex;
   width: 100%;
@@ -76,7 +76,7 @@ body {
   background: #020202;
 }
 
-/* LEFT IMAGE */
+
 .hero-left {
   flex: 0 0 40%;
   overflow: hidden;
@@ -91,7 +91,6 @@ body {
   
 }
 
-/* RIGHT VIDEO */
 .hero-right {
   flex: 0 0 60%;
   position: relative;
@@ -110,7 +109,7 @@ body {
   transform: scale(1.05)
 }
 
-/* Overlay */
+
 .hero-right .overlay {
   position: absolute;
   inset: 0;
@@ -118,7 +117,7 @@ body {
   z-index: 1;
 }
 
-/* Hero Text */
+
 .hero-right .hero-content {
   position: relative;
   z-index: 2;
@@ -150,7 +149,7 @@ body {
   margin-bottom: 4px;
 }
 
-/* ================= SECTIONS ================= */
+
 section {
   padding: 90px 10%;
   text-align: center;
@@ -162,7 +161,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* ================= GALLERY ================= */
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -181,7 +180,7 @@ h2 {
   transform: scale(1.05);
 }
 
-/* ================= SERVICES ================= */
+
 .service-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -195,7 +194,7 @@ h2 {
   font-size: 18px;
 }
 
-/* ================= CONTACT ================= */
+
 .contact form {
   max-width: 500px;
   margin: auto;
@@ -211,7 +210,7 @@ h2 {
   border: 1px solid #ccc;
 }
 
-/* ================= FOOTER ================= */
+
 footer {
   background: #111;
   color: #aaa;
@@ -219,7 +218,7 @@ footer {
   text-align: center;
 }
 
-/* ================= SCROLL REVEAL ================= */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -231,7 +230,7 @@ footer {
   transform: translateY(0);
 }
 
-/* ================= WHATSAPP ================= */
+
 .whatsapp-float {
   position: fixed;
   bottom: 25px;
@@ -251,7 +250,6 @@ footer {
   width: 32px;
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 900px) {
   .split-hero {
     flex-direction: column;
@@ -268,7 +266,7 @@ footer {
     padding: 0 6%;
   }
 }
-/* ================= FLOWER LOGO ANIMATION ================= */
+
 .flower-logo {
   display: flex;
   align-items: center;
@@ -276,7 +274,7 @@ footer {
   position: relative;
 }
 
-/* Brand text animation */
+
 .flower-logo .text {
   font-family: "Playfair Display", serif;
   font-size: 24px;
@@ -284,14 +282,14 @@ footer {
   animation: glow 3s ease-in-out infinite;
 }
 
-/* Flower icons */
+
 .flower-logo .flower {
   font-size: 18px;
   animation: floatFlower 4s ease-in-out infinite;
   opacity: 0.85;
 }
 
-/* Stagger animation */
+
 .flower-logo .flower:first-child {
   animation-delay: 0s;
 }
@@ -300,7 +298,7 @@ footer {
   animation-delay: 2s;
 }
 
-/* Glow animation */
+
 @keyframes glow {
   0% {
     text-shadow: 0 0 5px rgba(199,155,99,0.4);
@@ -313,7 +311,7 @@ footer {
   }
 }
 
-/* Floating flowers */
+
 @keyframes floatFlower {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -325,7 +323,7 @@ footer {
     transform: translateY(0) rotate(0deg);
   }
 }
-/* ================= LOGO LETTER ANIMATION ================= */
+
 .logo-text span {
   display: inline-block;
   opacity: 0;
@@ -340,7 +338,7 @@ footer {
   }
 }
 
-/* ================= SVG PETALS ================= */
+
 .flower-logo {
   display: flex;
   align-items: center;
@@ -375,7 +373,7 @@ footer {
   }
 }
 
-/* ================= FALLING PETALS ================= */
+
 .falling-petal {
   position: fixed;
   top: -40px;
@@ -394,7 +392,7 @@ footer {
     opacity: 0;
   }
 }
-/* ================= FORCE LOGO TO ONE LINE (MOBILE) ================= */
+
 @media (max-width: 768px) {
   .flower-logo {
     flex-wrap: nowrap;
@@ -409,13 +407,12 @@ footer {
     font-size: 16px;
   }
 
-  /* Slightly shrink petals on mobile */
+  
   .petal {
     width: 14px;
     height: 14px;
   }
 
-  /* Reduce navbar padding to give logo more room */
   .navbar {
     padding: 0 4%;
   }
@@ -432,21 +429,21 @@ footer {
     height: 12px;
   }
 }
-/* ================= NAVBAR MOBILE FIX (NO OVERLAP) ================= */
+
 @media (max-width: 768px) {
   .navbar {
     padding: 0 3%;
     height: 64px;
   }
 
-  /* Keep everything in one row */
+  
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  /* Logo stays compact */
+  
   .flower-logo {
     flex-shrink: 0;
     white-space: nowrap;
@@ -461,7 +458,7 @@ footer {
     height: 14px;
   }
 
-  /* Nav links container */
+
   .navbar nav {
     display: flex;
     align-items: center;
@@ -469,14 +466,14 @@ footer {
     flex-shrink: 1;
   }
 
-  /* Normal links */
+  
   .navbar nav a {
     font-size: 13px;
     margin-left: 0;
     white-space: nowrap;
   }
 
-  /* BOOK NOW button — special handling */
+  
   .navbar nav a.btn {
     padding: 6px 10px;
     font-size: 12px;
@@ -484,7 +481,7 @@ footer {
   }
 }
 
-/* EXTRA SMALL PHONES (≤ 420px) */
+
 @media (max-width: 420px) {
   /* Slightly reduce everything */
   .logo-text span {
@@ -500,7 +497,7 @@ footer {
     font-size: 11px;
   }
 
-  /* Optional: hide petals if space is too tight */
+  
   .petal {
     display: none;
   }
@@ -587,7 +584,7 @@ footer {
   padding-top: 16px;
 }
 
-/* MOBILE */
+
 @media (max-width: 900px) {
   .footer-container {
     grid-template-columns: 1fr;
@@ -622,7 +619,7 @@ footer {
   opacity: 1;
   color: #c8f3dc;
 }
-/* GALLERY VIEW MORE */
+
 .more-img {
   display: none;
 }
@@ -631,7 +628,7 @@ footer {
   text-align: center;
   margin-top: 30px;
 }
-/* GALLERY PAGE */
+
 .gallery-hero {
   padding: 140px 20px 80px;
   text-align: center;
@@ -770,7 +767,7 @@ footer {
     font-size: 28px;
   }
 }
-/* GALLERY SECTIONS */
+
 .gallery-sections {
   padding: 80px 8%;
 }
@@ -786,13 +783,15 @@ footer {
   text-align: center;
 }
 
-/* SLIDESHOW */
 .slideshow {
   position: relative;
   max-width: 100%;
   height: 420px;
   overflow: hidden;
   border-radius: 18px;
+  touch-action: pan-y;
+
+
 }
 
 .slideshow img {
@@ -809,7 +808,7 @@ footer {
   opacity: 1;
 }
 
-/* NAV BUTTONS */
+
 .slideshow button {
   position: absolute;
   top: 50%;
@@ -831,7 +830,7 @@ footer {
   background: rgba(0,0,0,0.75);
 }
 
-/* MOBILE */
+
 /* @media (max-width: 768px) {
   .slideshow {
     height: 260px;
