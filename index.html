@@ -445,6 +445,32 @@ const playLandingAudio = () => {
 document.addEventListener("click", playLandingAudio);
 document.addEventListener("touchstart", playLandingAudio);
 document.addEventListener("scroll", playLandingAudio);
+(function () {
+  const audio = document.getElementById("landingAudio");
+  const splash = document.getElementById("splash");
+
+  audio.volume = 0.4;
+
+  const unlockAndPlay = () => {
+    // play MUST be inside touch/click event
+    audio.play().then(() => {
+      console.log("Audio played on user interaction");
+    }).catch(err => {
+      console.log("Audio failed:", err);
+    });
+
+    // hide splash
+    splash.classList.add("hide");
+
+    // remove listeners so it plays only once
+    document.removeEventListener("touchstart", unlockAndPlay);
+    document.removeEventListener("click", unlockAndPlay);
+  };
+
+  // mobile + desktop
+  document.addEventListener("touchstart", unlockAndPlay, { once: true });
+  document.addEventListener("click", unlockAndPlay, { once: true });
+})();
 </script>
 
 
