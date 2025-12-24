@@ -18,7 +18,11 @@
 </head>
 <body>
 
-  
+  <audio id="landingAudio" preload="auto">
+  <source src="./assets/audio/tone.mp3" type="audio/mpeg">
+</audio>
+
+
   <div id="splash">
     <img src="https://igjtvefiqhxqaqwoacxm.supabase.co/storage/v1/object/public/bibah/Ganesh%20Chaturthi%20White%20Transparent,%20Ganpati%20Free%20Png%20For%20Ganesh%20Chaturthi,%20Ganesh%20Png,%20Ganesh%20Chaturthi,%20Ganpati%20Png%20PNG%20Image%20For%20Free%20Download.jpg" alt="Splash Image">
   </div>
@@ -411,7 +415,39 @@ if (slider && window.innerWidth <= 768) {
     isDown = false;
   });
 }
+window.addEventListener("load", () => {
+  const splash = document.getElementById("splash");
+
+  // hide splash visually
+  setTimeout(() => {
+    splash.classList.add("hide");
+  }, 2500);
+});
+
+// Unlock & play audio on first interaction (100% reliable)
+const playLandingAudio = () => {
+  const audio = document.getElementById("landingAudio");
+  audio.volume = 0.4;
+
+  audio.play().then(() => {
+    console.log("Landing audio played");
+  }).catch(err => {
+    console.log("Audio blocked:", err);
+  });
+
+  // remove listeners after first play
+  document.removeEventListener("click", playLandingAudio);
+  document.removeEventListener("touchstart", playLandingAudio);
+  document.removeEventListener("scroll", playLandingAudio);
+};
+
+// user interaction listeners
+document.addEventListener("click", playLandingAudio);
+document.addEventListener("touchstart", playLandingAudio);
+document.addEventListener("scroll", playLandingAudio);
 </script>
+
+
 
   <script src="script.js"></script>
 </body>

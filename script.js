@@ -195,3 +195,4 @@ setInterval(() => {
   heroIndex = (heroIndex + 1) % heroSlides.length;
   heroSlides[heroIndex].classList.add("active");
 }, 4000); // 4 seconds
+
